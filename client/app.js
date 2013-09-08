@@ -1,10 +1,11 @@
 (function (scope) {
-  function DotsApp(socket) {
+  function qmarks(socket,userName) {
     window.socket = this.socket = socket;
     window.SID = socket.socket.sessionid;
+    this.userName = userName;
     this.initialize();
   }
-  var p = DotsApp.prototype;
+  var p = qmarks.prototype;
 
   p.initialize = function() {
     var s = this,w=window;
@@ -111,7 +112,7 @@
       document.getElementById('info').innerHTML = '1 Player found, waiting 3 more seconds...';
     });
 
-    socket.emit('setName',{name:document.getElementById('playerName').value});
+    socket.emit('setName',{name:s.userName});
     document.getElementById('info').style.display = 'none';
   }
 
@@ -235,7 +236,7 @@
     u && u.switchToLane(e.i);
   }
 
-  scope.DotsApp = DotsApp; 
+  scope.qmarks = qmarks; 
 } (window));
 
 (function (scope) {
@@ -741,10 +742,12 @@ function snapValue(value,snap)
 }
 
 connect = function() {
-  var socket = io.connect(window.location.hostname);
+  var socket = io.connect(window.location.hostname),
+      name = document.getElementById('playerName').value;
   socket.on('connected', function (data) {
-    new DotsApp(socket);
+    new qmarks(socket,name);
   });
+  document.getElementById('info').innerHTML = "Connecting... please wait..."
 };
 
 inputkeydown = function(e) {

@@ -230,7 +230,7 @@ setInterval(tick, 30);
                 income: 30
             };
             cl.dead = false;
-            cl.lives = 20;
+            cl.lives = 50;
         }
         this.started = true;
         this.incomeCd = 0;
