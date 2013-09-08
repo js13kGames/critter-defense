@@ -1,7 +1,7 @@
 qmarks
 ======
 
-#### [Play](http://qmarks.jit.su)
+#### [Play](http://qmarks.jit.su) - qmarks.jit.su
 
 ### About
 
