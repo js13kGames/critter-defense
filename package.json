@@ -1,0 +1,38 @@
+{
+  "name": "qmarks",
+  "preferGlobal": true,
+  "version": "0.3.0",
+  "author": "olsn <olsn@indiegamr.com>",
+  "description": "js13k multiplayer",
+  "contributors": [
+    {
+      "name": "Olaf Horstmann",
+      "email": "olsn@indiegamr.com"
+    }
+  ],
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "cli",
+    "http",
+    "server"
+  ],
+  "dependencies": {
+    "socket.io": "*"
+  },
+  "analyze": false,
+  "devDependencies": {
+    "vows": "0.5.x",
+    "request": "2.1.x"
+  },
+  "bundledDependencies": [
+    "union",
+    "ecstatic"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  },
+  "subdomain": "qmarks"
+}
